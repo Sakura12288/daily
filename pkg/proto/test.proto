@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option go_package = "./pkg/pb";
+
+package pb;
+
+service Test {
+    rpc T(Req) returns (Rpn) {}
+    rpc Publish(PublishReq) returns (PublishRpn) {}
+}
+
+message Req {
+   string name = 1;
+    string first = 2;
+}
+
+message Rpn {
+    string mess  = 1;
+}
+
+message PublishReq {
+   string title = 1;
+   string filepath = 2;
+   int64 userID = 3;
+}
+
+message PublishRpn {
+
+}
+
